@@ -1,0 +1,51 @@
+﻿@model FirmaTransportowa.Models.OSOBA
+
+@{
+    ViewBag.Title = "Logowanie";
+}
+
+<h2>Login</h2>
+ 
+@using (Html.BeginForm("Login","Konto", FormMethod.Post))
+{
+ //this  is for create form tag
+ @Html.AntiForgeryToken()          // this is for prevent CSRF attack
+ @Html.ValidationSummary(true)
+ if (@ViewBag.Message != null)
+ {
+  <div style="border:1px solid red">
+   @ViewBag.Message
+  </div>
+ }
+ <table>
+  <tr>
+   <td>@Html.LabelFor(a=>a.OSO_LOGIN)</td>
+   <td>@Html.TextBoxFor(a=>a.OSO_LOGIN)</td>
+   <td>@Html.ValidationMessageFor(a=>a.OSO_LOGIN)</td>
+  </tr>
+  <tr>
+   <td>
+    @Html.LabelFor(a=>a.OSO_HASLO)
+   </td>
+   <td>
+    @Html.PasswordFor(a=>a.OSO_HASLO)
+   </td>
+   <td>
+    @Html.ValidationMessageFor(a=>a.OSO_HASLO)
+   </td>
+  </tr>
+  <tr>
+   <td></td>
+   <td>
+    <input type="submit" value="Login" />
+   </td>
+   <td></td>
+  </tr>
+ </table>
+}
+ 
+@* This below line is for create javascript section *@
+ 
+@section Scripts{
+ @Scripts.Render("~/bundles/jqueryval")
+}

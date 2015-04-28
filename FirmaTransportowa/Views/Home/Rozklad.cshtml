@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Rozklad";
+}
+
+<h2>Wybierz rozkład</h2>
+
+@using (Html.BeginForm("WybranyRozklad", "Home", FormMethod.Get))
+{
+    <fieldset>
+        @Html.DropDownList("_id",@ViewBag.Przystanki as IEnumerable<SelectListItem>, new { @onchange="CallChangefunc(this.value)" })
+        <p>
+            <input type="submit" value="Wyświetl" disabled ="disabled" id ="ident" style="display: none" />
+        </p>
+    </fieldset>
+}
+
+<script>
+function CallChangefunc(val)
+{
+    if (val != 0) {
+        document.getElementById("ident").disabled = false;
+        document.getElementById("ident").style.display = "inline";
+    }
+    else {
+        document.getElementById("ident").disabled = true;
+        document.getElementById("ident").style.display = "none";
+    }
+}
+</script>

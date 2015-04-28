@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="firmatransportowaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="firmatransportowaModelStoreContainer">
+          <EntitySet Name="ADMINISTRACJA" EntityType="firmatransportowaModel.Store.ADMINISTRACJA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CENNIK" EntityType="firmatransportowaModel.Store.CENNIK" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DANE_TELEADRESOWE" EntityType="firmatransportowaModel.Store.DANE_TELEADRESOWE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DODATKOWE_WYPOSAZENIE" EntityType="firmatransportowaModel.Store.DODATKOWE_WYPOSAZENIE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KIEROWCA" EntityType="firmatransportowaModel.Store.KIEROWCA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KLIENT" EntityType="firmatransportowaModel.Store.KLIENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NAGRODA" EntityType="firmatransportowaModel.Store.NAGRODA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OSOBA" EntityType="firmatransportowaModel.Store.OSOBA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="POJAZD" EntityType="firmatransportowaModel.Store.POJAZD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRZEJAZD" EntityType="firmatransportowaModel.Store.PRZEJAZD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRZYSTANEK" EntityType="firmatransportowaModel.Store.PRZYSTANEK" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRZYSTANKI_NA_TRASIE" EntityType="firmatransportowaModel.Store.PRZYSTANKI_NA_TRASIE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REZERWACJA" EntityType="firmatransportowaModel.Store.REZERWACJA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STAN_TECHNICZNY" EntityType="firmatransportowaModel.Store.STAN_TECHNICZNY" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ADMINISTRACJA_OSOBA" Association="firmatransportowaModel.Store.FK_ADMINISTRACJA_OSOBA">
+            <End Role="OSOBA" EntitySet="OSOBA" />
+            <End Role="ADMINISTRACJA" EntitySet="ADMINISTRACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CENNIK_ADMINISTRACJA" Association="firmatransportowaModel.Store.FK_CENNIK_ADMINISTRACJA">
+            <End Role="ADMINISTRACJA" EntitySet="ADMINISTRACJA" />
+            <End Role="CENNIK" EntitySet="CENNIK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DODATKOWE_WYPOSAZENIE_POJAZD" Association="firmatransportowaModel.Store.FK_DODATKOWE_WYPOSAZENIE_POJAZD">
+            <End Role="POJAZD" EntitySet="POJAZD" />
+            <End Role="DODATKOWE_WYPOSAZENIE" EntitySet="DODATKOWE_WYPOSAZENIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KIEROWCA_OSOBA" Association="firmatransportowaModel.Store.FK_KIEROWCA_OSOBA">
+            <End Role="OSOBA" EntitySet="OSOBA" />
+            <End Role="KIEROWCA" EntitySet="KIEROWCA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KLIENT_NAGRODA" Association="firmatransportowaModel.Store.FK_KLIENT_NAGRODA">
+            <End Role="NAGRODA" EntitySet="NAGRODA" />
+            <End Role="KLIENT" EntitySet="KLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KLIENT_OSOBA" Association="firmatransportowaModel.Store.FK_KLIENT_OSOBA">
+            <End Role="OSOBA" EntitySet="OSOBA" />
+            <End Role="KLIENT" EntitySet="KLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OSOBA_DANE_TELEADRESOWE" Association="firmatransportowaModel.Store.FK_OSOBA_DANE_TELEADRESOWE">
+            <End Role="DANE_TELEADRESOWE" EntitySet="DANE_TELEADRESOWE" />
+            <End Role="OSOBA" EntitySet="OSOBA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZEJAZD_CENNIK" Association="firmatransportowaModel.Store.FK_PRZEJAZD_CENNIK">
+            <End Role="CENNIK" EntitySet="CENNIK" />
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZEJAZD_KIEROWCA" Association="firmatransportowaModel.Store.FK_PRZEJAZD_KIEROWCA">
+            <End Role="KIEROWCA" EntitySet="KIEROWCA" />
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZEJAZD_POJAZD" Association="firmatransportowaModel.Store.FK_PRZEJAZD_POJAZD">
+            <End Role="POJAZD" EntitySet="POJAZD" />
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK" Association="firmatransportowaModel.Store.FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK">
+            <End Role="PRZYSTANEK" EntitySet="PRZYSTANEK" />
+            <End Role="PRZYSTANKI_NA_TRASIE" EntitySet="PRZYSTANKI_NA_TRASIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REZERWACJA_ADMINISTRACJA" Association="firmatransportowaModel.Store.FK_REZERWACJA_ADMINISTRACJA">
+            <End Role="ADMINISTRACJA" EntitySet="ADMINISTRACJA" />
+            <End Role="REZERWACJA" EntitySet="REZERWACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REZERWACJA_KLIENT" Association="firmatransportowaModel.Store.FK_REZERWACJA_KLIENT">
+            <End Role="KLIENT" EntitySet="KLIENT" />
+            <End Role="REZERWACJA" EntitySet="REZERWACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REZERWACJA_PRZEJAZD" Association="firmatransportowaModel.Store.FK_REZERWACJA_PRZEJAZD">
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+            <End Role="REZERWACJA" EntitySet="REZERWACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STAN_TECHNICZNY_POJAZD" Association="firmatransportowaModel.Store.FK_STAN_TECHNICZNY_POJAZD">
+            <End Role="POJAZD" EntitySet="POJAZD" />
+            <End Role="STAN_TECHNICZNY" EntitySet="STAN_TECHNICZNY" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ADMINISTRACJA">
+          <Key>
+            <PropertyRef Name="ADM_ID" />
+          </Key>
+          <Property Name="ADM_ID" Type="int" Nullable="false" />
+          <Property Name="OSO_ID" Type="int" />
+          <Property Name="ADM_WYNAGRODZENIE" Type="int" />
+          <Property Name="ADM_STANOWISKO" Type="varchar" MaxLength="30" />
+          <Property Name="ADM_ZATRUDNIONY" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CENNIK">
+          <Key>
+            <PropertyRef Name="CEN_ID" />
+          </Key>
+          <Property Name="CEN_ID" Type="int" Nullable="false" />
+          <Property Name="ADM_ID" Type="int" />
+          <Property Name="CEN_KATO_KRK" Type="float" />
+          <Property Name="CEN_JEDEN_PRZYSTANEK" Type="float" />
+          <Property Name="CEN_ULGA_STUDENT" Type="int" />
+          <Property Name="CEN_ULGA_DZIECI" Type="int" />
+        </EntityType>
+        <EntityType Name="DANE_TELEADRESOWE">
+          <Key>
+            <PropertyRef Name="DAN_ID" />
+          </Key>
+          <Property Name="DAN_ID" Type="int" Nullable="false" />
+          <Property Name="DAN_ULICA_NR_LOKALU" Type="varchar" MaxLength="30" />
+          <Property Name="DAN_KOD_POCZTOWY" Type="varchar" MaxLength="6"/>
+          <Property Name="DAN_MIASTO" Type="varchar" MaxLength="25" />
+          <Property Name="DAN_TELEFON" Type="int" />
+          <Property Name="DAN_EMAIL" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="DODATKOWE_WYPOSAZENIE">
+          <Key>
+            <PropertyRef Name="DOD_ID" />
+          </Key>
+          <Property Name="DOD_ID" Type="int" Nullable="false" />
+          <Property Name="POJ_ID" Type="int" />
+          <Property Name="DOD_NAZWA" Type="varchar" MaxLength="20" />
+          <Property Name="DOD_OPIS" Type="varchar" MaxLength="30" />
+          <Property Name="DOD_ILOSC" Type="int" />
+        </EntityType>
+        <EntityType Name="KIEROWCA">
+          <Key>
+            <PropertyRef Name="KIE_ID" />
+          </Key>
+          <Property Name="KIE_ID" Type="int" Nullable="false" />
+          <Property Name="OSO_ID" Type="int" />
+          <Property Name="KIE_UPRAWNIENIA" Type="varchar" MaxLength="40" />
+          <Property Name="KIE_ZATRUDNIONY" Type="datetime" />
+          <Property Name="KIE_WYNAGRODZENIE" Type="int" />
+        </EntityType>
+        <EntityType Name="KLIENT">
+          <Key>
+            <PropertyRef Name="KLI_ID" />
+          </Key>
+          <Property Name="KLI_ID" Type="int" Nullable="false" />
+          <Property Name="NAG_ID" Type="int" />
+          <Property Name="OSO_ID" Type="int" />
+          <Property Name="KLI_PUNKTY" Type="int" />
+          <Property Name="KLI_REZ_NIEWYKORZYSTANE" Type="int" />
+          <Property Name="KLI_BLOKADA_REZ" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NAGRODA">
+          <Key>
+            <PropertyRef Name="NAG_ID" />
+          </Key>
+          <Property Name="NAG_ID" Type="int" Nullable="false" />
+          <Property Name="NAG_NAZWA" Type="varchar" MaxLength="20" />
+          <Property Name="NAG_ILOSC_PUNKTOW" Type="int" />
+        </EntityType>
+        <EntityType Name="OSOBA">
+          <Key>
+            <PropertyRef Name="OSO_ID" />
+          </Key>
+          <Property Name="OSO_ID" Type="int" Nullable="false" />
+          <Property Name="DAN_ID" Type="int" />
+          <Property Name="OSO_IMIE" Type="varchar" MaxLength="20" />
+          <Property Name="OSO_NAZWISKO" Type="varchar" MaxLength="30" />
+          <Property Name="OSO_URODZONY" Type="datetime" />
+          <Property Name="OSO_LOGIN" Type="varchar" MaxLength="20" />
+          <Property Name="OSO_HASLO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="POJAZD">
+          <Key>
+            <PropertyRef Name="POJ_ID" />
+          </Key>
+          <Property Name="POJ_ID" Type="int" Nullable="false" />
+          <Property Name="POJ_IL_MIEJSC" Type="int" />
+          <Property Name="POJ_MARKA" Type="varchar" MaxLength="30" />
+          <Property Name="POJ_ROK_PRODUKCJI" Type="int" />
+          <Property Name="POJ_STATUS" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PRZEJAZD">
+          <Key>
+            <PropertyRef Name="PRD_ID" />
+          </Key>
+          <Property Name="PRD_ID" Type="int" Nullable="false" />
+          <Property Name="KIE_ID" Type="int" />
+          <Property Name="CEN_ID" Type="int" />
+          <Property Name="POJ_ID" Type="int" />
+          <Property Name="PRD_DATA" Type="datetime" />
+          <Property Name="PRD_KOSZT" Type="int" />
+        </EntityType>
+        <EntityType Name="PRZYSTANEK">
+          <Key>
+            <PropertyRef Name="PRK_ID" />
+          </Key>
+          <Property Name="PRK_ID" Type="int" Nullable="false" />
+          <Property Name="PRK_NAZWA" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PRZYSTANKI_NA_TRASIE">
+          <Key>
+            <PropertyRef Name="PRE_ID" />
+          </Key>
+          <Property Name="PRE_ID" Type="int" Nullable="false" />
+          <Property Name="PRE_ODJAZD" Type="time" />
+          <Property Name="PRK_ID" Type="int" />
+          <Property Name="PRE_KIERUNEK" Type="varchar" MaxLength="3"/>
+        </EntityType>
+        <EntityType Name="REZERWACJA">
+          <Key>
+            <PropertyRef Name="REZ_ID" />
+          </Key>
+          <Property Name="REZ_ID" Type="int" Nullable="false" />
+          <Property Name="PRD_ID" Type="int" />
+          <Property Name="KLI_ID" Type="int" />
+          <Property Name="ADM_ID" Type="int" />
+          <Property Name="REZ_DATA_REZERWACJI" Type="datetime" />
+        </EntityType>
+        <EntityType Name="STAN_TECHNICZNY">
+          <Key>
+            <PropertyRef Name="STA_ID" />
+          </Key>
+          <Property Name="STA_ID" Type="int" Nullable="false" />
+          <Property Name="POJ_ID" Type="int" />
+          <Property Name="STA_OPIS" Type="varchar" MaxLength="30" />
+          <Property Name="STA_UAKTUALNIONO" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_ADMINISTRACJA_OSOBA">
+          <End Role="OSOBA" Type="firmatransportowaModel.Store.OSOBA" Multiplicity="0..1" />
+          <End Role="ADMINISTRACJA" Type="firmatransportowaModel.Store.ADMINISTRACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OSOBA">
+              <PropertyRef Name="OSO_ID" />
+            </Principal>
+            <Dependent Role="ADMINISTRACJA">
+              <PropertyRef Name="OSO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CENNIK_ADMINISTRACJA">
+          <End Role="ADMINISTRACJA" Type="firmatransportowaModel.Store.ADMINISTRACJA" Multiplicity="0..1" />
+          <End Role="CENNIK" Type="firmatransportowaModel.Store.CENNIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADMINISTRACJA">
+              <PropertyRef Name="ADM_ID" />
+            </Principal>
+            <Dependent Role="CENNIK">
+              <PropertyRef Name="ADM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DODATKOWE_WYPOSAZENIE_POJAZD">
+          <End Role="POJAZD" Type="firmatransportowaModel.Store.POJAZD" Multiplicity="0..1" />
+          <End Role="DODATKOWE_WYPOSAZENIE" Type="firmatransportowaModel.Store.DODATKOWE_WYPOSAZENIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Principal>
+            <Dependent Role="DODATKOWE_WYPOSAZENIE">
+              <PropertyRef Name="POJ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KIEROWCA_OSOBA">
+          <End Role="OSOBA" Type="firmatransportowaModel.Store.OSOBA" Multiplicity="0..1" />
+          <End Role="KIEROWCA" Type="firmatransportowaModel.Store.KIEROWCA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OSOBA">
+              <PropertyRef Name="OSO_ID" />
+            </Principal>
+            <Dependent Role="KIEROWCA">
+              <PropertyRef Name="OSO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KLIENT_NAGRODA">
+          <End Role="NAGRODA" Type="firmatransportowaModel.Store.NAGRODA" Multiplicity="0..1" />
+          <End Role="KLIENT" Type="firmatransportowaModel.Store.KLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAGRODA">
+              <PropertyRef Name="NAG_ID" />
+            </Principal>
+            <Dependent Role="KLIENT">
+              <PropertyRef Name="NAG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KLIENT_OSOBA">
+          <End Role="OSOBA" Type="firmatransportowaModel.Store.OSOBA" Multiplicity="0..1" />
+          <End Role="KLIENT" Type="firmatransportowaModel.Store.KLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OSOBA">
+              <PropertyRef Name="OSO_ID" />
+            </Principal>
+            <Dependent Role="KLIENT">
+              <PropertyRef Name="OSO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OSOBA_DANE_TELEADRESOWE">
+          <End Role="DANE_TELEADRESOWE" Type="firmatransportowaModel.Store.DANE_TELEADRESOWE" Multiplicity="0..1" />
+          <End Role="OSOBA" Type="firmatransportowaModel.Store.OSOBA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DANE_TELEADRESOWE">
+              <PropertyRef Name="DAN_ID" />
+            </Principal>
+            <Dependent Role="OSOBA">
+              <PropertyRef Name="DAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZEJAZD_CENNIK">
+          <End Role="CENNIK" Type="firmatransportowaModel.Store.CENNIK" Multiplicity="0..1" />
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.Store.PRZEJAZD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENNIK">
+              <PropertyRef Name="CEN_ID" />
+            </Principal>
+            <Dependent Role="PRZEJAZD">
+              <PropertyRef Name="CEN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZEJAZD_KIEROWCA">
+          <End Role="KIEROWCA" Type="firmatransportowaModel.Store.KIEROWCA" Multiplicity="0..1" />
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.Store.PRZEJAZD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KIEROWCA">
+              <PropertyRef Name="KIE_ID" />
+            </Principal>
+            <Dependent Role="PRZEJAZD">
+              <PropertyRef Name="KIE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZEJAZD_POJAZD">
+          <End Role="POJAZD" Type="firmatransportowaModel.Store.POJAZD" Multiplicity="0..1" />
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.Store.PRZEJAZD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Principal>
+            <Dependent Role="PRZEJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK">
+          <End Role="PRZYSTANEK" Type="firmatransportowaModel.Store.PRZYSTANEK" Multiplicity="0..1" />
+          <End Role="PRZYSTANKI_NA_TRASIE" Type="firmatransportowaModel.Store.PRZYSTANKI_NA_TRASIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRZYSTANEK">
+              <PropertyRef Name="PRK_ID" />
+            </Principal>
+            <Dependent Role="PRZYSTANKI_NA_TRASIE">
+              <PropertyRef Name="PRK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REZERWACJA_ADMINISTRACJA">
+          <End Role="ADMINISTRACJA" Type="firmatransportowaModel.Store.ADMINISTRACJA" Multiplicity="0..1" />
+          <End Role="REZERWACJA" Type="firmatransportowaModel.Store.REZERWACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADMINISTRACJA">
+              <PropertyRef Name="ADM_ID" />
+            </Principal>
+            <Dependent Role="REZERWACJA">
+              <PropertyRef Name="ADM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REZERWACJA_KLIENT">
+          <End Role="KLIENT" Type="firmatransportowaModel.Store.KLIENT" Multiplicity="0..1" />
+          <End Role="REZERWACJA" Type="firmatransportowaModel.Store.REZERWACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLIENT">
+              <PropertyRef Name="KLI_ID" />
+            </Principal>
+            <Dependent Role="REZERWACJA">
+              <PropertyRef Name="KLI_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REZERWACJA_PRZEJAZD">
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.Store.PRZEJAZD" Multiplicity="0..1" />
+          <End Role="REZERWACJA" Type="firmatransportowaModel.Store.REZERWACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRZEJAZD">
+              <PropertyRef Name="PRD_ID" />
+            </Principal>
+            <Dependent Role="REZERWACJA">
+              <PropertyRef Name="PRD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STAN_TECHNICZNY_POJAZD">
+          <End Role="POJAZD" Type="firmatransportowaModel.Store.POJAZD" Multiplicity="0..1" />
+          <End Role="STAN_TECHNICZNY" Type="firmatransportowaModel.Store.STAN_TECHNICZNY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Principal>
+            <Dependent Role="STAN_TECHNICZNY">
+              <PropertyRef Name="POJ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="firmatransportowaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="firmatransportowaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINISTRACJA" EntityType="firmatransportowaModel.ADMINISTRACJA" />
+          <EntitySet Name="CENNIK" EntityType="firmatransportowaModel.CENNIK" />
+          <EntitySet Name="DANE_TELEADRESOWE" EntityType="firmatransportowaModel.DANE_TELEADRESOWE" />
+          <EntitySet Name="DODATKOWE_WYPOSAZENIE" EntityType="firmatransportowaModel.DODATKOWE_WYPOSAZENIE" />
+          <EntitySet Name="KIEROWCA" EntityType="firmatransportowaModel.KIEROWCA" />
+          <EntitySet Name="KLIENT" EntityType="firmatransportowaModel.KLIENT" />
+          <EntitySet Name="NAGRODA" EntityType="firmatransportowaModel.NAGRODA" />
+          <EntitySet Name="OSOBA" EntityType="firmatransportowaModel.OSOBA" />
+          <EntitySet Name="POJAZD" EntityType="firmatransportowaModel.POJAZD" />
+          <EntitySet Name="PRZEJAZD" EntityType="firmatransportowaModel.PRZEJAZD" />
+          <EntitySet Name="PRZYSTANEK" EntityType="firmatransportowaModel.PRZYSTANEK" />
+          <EntitySet Name="PRZYSTANKI_NA_TRASIE" EntityType="firmatransportowaModel.PRZYSTANKI_NA_TRASIE" />
+          <EntitySet Name="REZERWACJA" EntityType="firmatransportowaModel.REZERWACJA" />
+          <EntitySet Name="STAN_TECHNICZNY" EntityType="firmatransportowaModel.STAN_TECHNICZNY" />
+          <AssociationSet Name="FK_ADMINISTRACJA_OSOBA" Association="firmatransportowaModel.FK_ADMINISTRACJA_OSOBA">
+            <End Role="OSOBA" EntitySet="OSOBA" />
+            <End Role="ADMINISTRACJA" EntitySet="ADMINISTRACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CENNIK_ADMINISTRACJA" Association="firmatransportowaModel.FK_CENNIK_ADMINISTRACJA">
+            <End Role="ADMINISTRACJA" EntitySet="ADMINISTRACJA" />
+            <End Role="CENNIK" EntitySet="CENNIK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REZERWACJA_ADMINISTRACJA" Association="firmatransportowaModel.FK_REZERWACJA_ADMINISTRACJA">
+            <End Role="ADMINISTRACJA" EntitySet="ADMINISTRACJA" />
+            <End Role="REZERWACJA" EntitySet="REZERWACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZEJAZD_CENNIK" Association="firmatransportowaModel.FK_PRZEJAZD_CENNIK">
+            <End Role="CENNIK" EntitySet="CENNIK" />
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OSOBA_DANE_TELEADRESOWE" Association="firmatransportowaModel.FK_OSOBA_DANE_TELEADRESOWE">
+            <End Role="DANE_TELEADRESOWE" EntitySet="DANE_TELEADRESOWE" />
+            <End Role="OSOBA" EntitySet="OSOBA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DODATKOWE_WYPOSAZENIE_POJAZD" Association="firmatransportowaModel.FK_DODATKOWE_WYPOSAZENIE_POJAZD">
+            <End Role="POJAZD" EntitySet="POJAZD" />
+            <End Role="DODATKOWE_WYPOSAZENIE" EntitySet="DODATKOWE_WYPOSAZENIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KIEROWCA_OSOBA" Association="firmatransportowaModel.FK_KIEROWCA_OSOBA">
+            <End Role="OSOBA" EntitySet="OSOBA" />
+            <End Role="KIEROWCA" EntitySet="KIEROWCA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZEJAZD_KIEROWCA" Association="firmatransportowaModel.FK_PRZEJAZD_KIEROWCA">
+            <End Role="KIEROWCA" EntitySet="KIEROWCA" />
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KLIENT_NAGRODA" Association="firmatransportowaModel.FK_KLIENT_NAGRODA">
+            <End Role="NAGRODA" EntitySet="NAGRODA" />
+            <End Role="KLIENT" EntitySet="KLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KLIENT_OSOBA" Association="firmatransportowaModel.FK_KLIENT_OSOBA">
+            <End Role="OSOBA" EntitySet="OSOBA" />
+            <End Role="KLIENT" EntitySet="KLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REZERWACJA_KLIENT" Association="firmatransportowaModel.FK_REZERWACJA_KLIENT">
+            <End Role="KLIENT" EntitySet="KLIENT" />
+            <End Role="REZERWACJA" EntitySet="REZERWACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZEJAZD_POJAZD" Association="firmatransportowaModel.FK_PRZEJAZD_POJAZD">
+            <End Role="POJAZD" EntitySet="POJAZD" />
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STAN_TECHNICZNY_POJAZD" Association="firmatransportowaModel.FK_STAN_TECHNICZNY_POJAZD">
+            <End Role="POJAZD" EntitySet="POJAZD" />
+            <End Role="STAN_TECHNICZNY" EntitySet="STAN_TECHNICZNY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REZERWACJA_PRZEJAZD" Association="firmatransportowaModel.FK_REZERWACJA_PRZEJAZD">
+            <End Role="PRZEJAZD" EntitySet="PRZEJAZD" />
+            <End Role="REZERWACJA" EntitySet="REZERWACJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK" Association="firmatransportowaModel.FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK">
+            <End Role="PRZYSTANEK" EntitySet="PRZYSTANEK" />
+            <End Role="PRZYSTANKI_NA_TRASIE" EntitySet="PRZYSTANKI_NA_TRASIE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ADMINISTRACJA">
+          <Key>
+            <PropertyRef Name="ADM_ID" />
+          </Key>
+          <Property Name="ADM_ID" Type="Int32" Nullable="false" />
+          <Property Name="OSO_ID" Type="Int32" />
+          <Property Name="ADM_WYNAGRODZENIE" Type="Int32" />
+          <Property Name="ADM_STANOWISKO" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ADM_ZATRUDNIONY" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OSOBA" Relationship="firmatransportowaModel.FK_ADMINISTRACJA_OSOBA" FromRole="ADMINISTRACJA" ToRole="OSOBA" />
+          <NavigationProperty Name="CENNIK" Relationship="firmatransportowaModel.FK_CENNIK_ADMINISTRACJA" FromRole="ADMINISTRACJA" ToRole="CENNIK" />
+          <NavigationProperty Name="REZERWACJA" Relationship="firmatransportowaModel.FK_REZERWACJA_ADMINISTRACJA" FromRole="ADMINISTRACJA" ToRole="REZERWACJA" />
+        </EntityType>
+        <EntityType Name="CENNIK">
+          <Key>
+            <PropertyRef Name="CEN_ID" />
+          </Key>
+          <Property Name="CEN_ID" Type="Int32" Nullable="false" />
+          <Property Name="ADM_ID" Type="Int32" />
+          <Property Name="CEN_KATO_KRK" Type="Double" />
+          <Property Name="CEN_JEDEN_PRZYSTANEK" Type="Double" />
+          <Property Name="CEN_ULGA_STUDENT" Type="Int32" />
+          <Property Name="CEN_ULGA_DZIECI" Type="Int32" />
+          <NavigationProperty Name="ADMINISTRACJA" Relationship="firmatransportowaModel.FK_CENNIK_ADMINISTRACJA" FromRole="CENNIK" ToRole="ADMINISTRACJA" />
+          <NavigationProperty Name="PRZEJAZD" Relationship="firmatransportowaModel.FK_PRZEJAZD_CENNIK" FromRole="CENNIK" ToRole="PRZEJAZD" />
+        </EntityType>
+        <EntityType Name="DANE_TELEADRESOWE">
+          <Key>
+            <PropertyRef Name="DAN_ID" />
+          </Key>
+          <Property Name="DAN_ID" Type="Int32" Nullable="false" />
+          <Property Name="DAN_ULICA_NR_LOKALU" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DAN_KOD_POCZTOWY" Type="String" MaxLength="6" Unicode="false" FixedLength="true"/>
+          <Property Name="DAN_MIASTO" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="DAN_TELEFON" Type="Int32" />
+          <Property Name="DAN_EMAIL" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="OSOBA" Relationship="firmatransportowaModel.FK_OSOBA_DANE_TELEADRESOWE" FromRole="DANE_TELEADRESOWE" ToRole="OSOBA" />
+        </EntityType>
+        <EntityType Name="DODATKOWE_WYPOSAZENIE">
+          <Key>
+            <PropertyRef Name="DOD_ID" />
+          </Key>
+          <Property Name="DOD_ID" Type="Int32" Nullable="false" />
+          <Property Name="POJ_ID" Type="Int32" />
+          <Property Name="DOD_NAZWA" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DOD_OPIS" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DOD_ILOSC" Type="Int32" />
+          <NavigationProperty Name="POJAZD" Relationship="firmatransportowaModel.FK_DODATKOWE_WYPOSAZENIE_POJAZD" FromRole="DODATKOWE_WYPOSAZENIE" ToRole="POJAZD" />
+        </EntityType>
+        <EntityType Name="KIEROWCA">
+          <Key>
+            <PropertyRef Name="KIE_ID" />
+          </Key>
+          <Property Name="KIE_ID" Type="Int32" Nullable="false" />
+          <Property Name="OSO_ID" Type="Int32" />
+          <Property Name="KIE_UPRAWNIENIA" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="KIE_ZATRUDNIONY" Type="DateTime" Precision="3" />
+          <Property Name="KIE_WYNAGRODZENIE" Type="Int32" />
+          <NavigationProperty Name="OSOBA" Relationship="firmatransportowaModel.FK_KIEROWCA_OSOBA" FromRole="KIEROWCA" ToRole="OSOBA" />
+          <NavigationProperty Name="PRZEJAZD" Relationship="firmatransportowaModel.FK_PRZEJAZD_KIEROWCA" FromRole="KIEROWCA" ToRole="PRZEJAZD" />
+        </EntityType>
+        <EntityType Name="KLIENT">
+          <Key>
+            <PropertyRef Name="KLI_ID" />
+          </Key>
+          <Property Name="KLI_ID" Type="Int32" Nullable="false" />
+          <Property Name="NAG_ID" Type="Int32" />
+          <Property Name="OSO_ID" Type="Int32" />
+          <Property Name="KLI_PUNKTY" Type="Int32" />
+          <Property Name="KLI_REZ_NIEWYKORZYSTANE" Type="Int32" />
+          <Property Name="KLI_BLOKADA_REZ" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="NAGRODA" Relationship="firmatransportowaModel.FK_KLIENT_NAGRODA" FromRole="KLIENT" ToRole="NAGRODA" />
+          <NavigationProperty Name="OSOBA" Relationship="firmatransportowaModel.FK_KLIENT_OSOBA" FromRole="KLIENT" ToRole="OSOBA" />
+          <NavigationProperty Name="REZERWACJA" Relationship="firmatransportowaModel.FK_REZERWACJA_KLIENT" FromRole="KLIENT" ToRole="REZERWACJA" />
+        </EntityType>
+        <EntityType Name="NAGRODA">
+          <Key>
+            <PropertyRef Name="NAG_ID" />
+          </Key>
+          <Property Name="NAG_ID" Type="Int32" Nullable="false" />
+          <Property Name="NAG_NAZWA" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NAG_ILOSC_PUNKTOW" Type="Int32" />
+          <NavigationProperty Name="KLIENT" Relationship="firmatransportowaModel.FK_KLIENT_NAGRODA" FromRole="NAGRODA" ToRole="KLIENT" />
+        </EntityType>
+        <EntityType Name="OSOBA">
+          <Key>
+            <PropertyRef Name="OSO_ID" />
+          </Key>
+          <Property Name="OSO_ID" Type="Int32" Nullable="false" />
+          <Property Name="DAN_ID" Type="Int32" />
+          <Property Name="OSO_IMIE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="OSO_NAZWISKO" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="OSO_URODZONY" Type="DateTime" Precision="3" />
+          <Property Name="OSO_LOGIN" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="OSO_HASLO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ADMINISTRACJA" Relationship="firmatransportowaModel.FK_ADMINISTRACJA_OSOBA" FromRole="OSOBA" ToRole="ADMINISTRACJA" />
+          <NavigationProperty Name="DANE_TELEADRESOWE" Relationship="firmatransportowaModel.FK_OSOBA_DANE_TELEADRESOWE" FromRole="OSOBA" ToRole="DANE_TELEADRESOWE" />
+          <NavigationProperty Name="KIEROWCA" Relationship="firmatransportowaModel.FK_KIEROWCA_OSOBA" FromRole="OSOBA" ToRole="KIEROWCA" />
+          <NavigationProperty Name="KLIENT" Relationship="firmatransportowaModel.FK_KLIENT_OSOBA" FromRole="OSOBA" ToRole="KLIENT" />
+        </EntityType>
+        <EntityType Name="POJAZD">
+          <Key>
+            <PropertyRef Name="POJ_ID" />
+          </Key>
+          <Property Name="POJ_ID" Type="Int32" Nullable="false" />
+          <Property Name="POJ_IL_MIEJSC" Type="Int32" />
+          <Property Name="POJ_MARKA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="POJ_ROK_PRODUKCJI" Type="Int32" />
+          <Property Name="POJ_STATUS" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DODATKOWE_WYPOSAZENIE" Relationship="firmatransportowaModel.FK_DODATKOWE_WYPOSAZENIE_POJAZD" FromRole="POJAZD" ToRole="DODATKOWE_WYPOSAZENIE" />
+          <NavigationProperty Name="PRZEJAZD" Relationship="firmatransportowaModel.FK_PRZEJAZD_POJAZD" FromRole="POJAZD" ToRole="PRZEJAZD" />
+          <NavigationProperty Name="STAN_TECHNICZNY" Relationship="firmatransportowaModel.FK_STAN_TECHNICZNY_POJAZD" FromRole="POJAZD" ToRole="STAN_TECHNICZNY" />
+        </EntityType>
+        <EntityType Name="PRZEJAZD">
+          <Key>
+            <PropertyRef Name="PRD_ID" />
+          </Key>
+          <Property Name="PRD_ID" Type="Int32" Nullable="false" />
+          <Property Name="KIE_ID" Type="Int32" />
+          <Property Name="CEN_ID" Type="Int32" />
+          <Property Name="POJ_ID" Type="Int32" />
+          <Property Name="PRD_DATA" Type="DateTime" Precision="3" />
+          <Property Name="PRD_KOSZT" Type="Int32" />
+          <NavigationProperty Name="CENNIK" Relationship="firmatransportowaModel.FK_PRZEJAZD_CENNIK" FromRole="PRZEJAZD" ToRole="CENNIK" />
+          <NavigationProperty Name="KIEROWCA" Relationship="firmatransportowaModel.FK_PRZEJAZD_KIEROWCA" FromRole="PRZEJAZD" ToRole="KIEROWCA" />
+          <NavigationProperty Name="POJAZD" Relationship="firmatransportowaModel.FK_PRZEJAZD_POJAZD" FromRole="PRZEJAZD" ToRole="POJAZD" />
+          <NavigationProperty Name="REZERWACJA" Relationship="firmatransportowaModel.FK_REZERWACJA_PRZEJAZD" FromRole="PRZEJAZD" ToRole="REZERWACJA" />
+        </EntityType>
+        <EntityType Name="PRZYSTANEK">
+          <Key>
+            <PropertyRef Name="PRK_ID" />
+          </Key>
+          <Property Name="PRK_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRK_NAZWA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PRZYSTANKI_NA_TRASIE" Relationship="firmatransportowaModel.FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK" FromRole="PRZYSTANEK" ToRole="PRZYSTANKI_NA_TRASIE" />
+        </EntityType>
+        <EntityType Name="PRZYSTANKI_NA_TRASIE">
+          <Key>
+            <PropertyRef Name="PRE_ID" />
+          </Key>
+          <Property Name="PRE_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRE_ODJAZD" Type="Time" Precision="7" />
+          <Property Name="PRK_ID" Type="Int32" />
+          <Property Name="PRE_KIERUNEK" Type="String" MaxLength="3" Unicode="false" />
+          <NavigationProperty Name="PRZYSTANEK" Relationship="firmatransportowaModel.FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK" FromRole="PRZYSTANKI_NA_TRASIE" ToRole="PRZYSTANEK" />
+        </EntityType>
+        <EntityType Name="REZERWACJA">
+          <Key>
+            <PropertyRef Name="REZ_ID" />
+          </Key>
+          <Property Name="REZ_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRD_ID" Type="Int32" />
+          <Property Name="KLI_ID" Type="Int32" />
+          <Property Name="ADM_ID" Type="Int32" />
+          <Property Name="REZ_DATA_REZERWACJI" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ADMINISTRACJA" Relationship="firmatransportowaModel.FK_REZERWACJA_ADMINISTRACJA" FromRole="REZERWACJA" ToRole="ADMINISTRACJA" />
+          <NavigationProperty Name="KLIENT" Relationship="firmatransportowaModel.FK_REZERWACJA_KLIENT" FromRole="REZERWACJA" ToRole="KLIENT" />
+          <NavigationProperty Name="PRZEJAZD" Relationship="firmatransportowaModel.FK_REZERWACJA_PRZEJAZD" FromRole="REZERWACJA" ToRole="PRZEJAZD" />
+        </EntityType>
+        <EntityType Name="STAN_TECHNICZNY">
+          <Key>
+            <PropertyRef Name="STA_ID" />
+          </Key>
+          <Property Name="STA_ID" Type="Int32" Nullable="false" />
+          <Property Name="POJ_ID" Type="Int32" />
+          <Property Name="STA_OPIS" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="STA_UAKTUALNIONO" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="POJAZD" Relationship="firmatransportowaModel.FK_STAN_TECHNICZNY_POJAZD" FromRole="STAN_TECHNICZNY" ToRole="POJAZD" />
+        </EntityType>
+        <Association Name="FK_ADMINISTRACJA_OSOBA">
+          <End Role="OSOBA" Type="firmatransportowaModel.OSOBA" Multiplicity="0..1" />
+          <End Role="ADMINISTRACJA" Type="firmatransportowaModel.ADMINISTRACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OSOBA">
+              <PropertyRef Name="OSO_ID" />
+            </Principal>
+            <Dependent Role="ADMINISTRACJA">
+              <PropertyRef Name="OSO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CENNIK_ADMINISTRACJA">
+          <End Role="ADMINISTRACJA" Type="firmatransportowaModel.ADMINISTRACJA" Multiplicity="0..1" />
+          <End Role="CENNIK" Type="firmatransportowaModel.CENNIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADMINISTRACJA">
+              <PropertyRef Name="ADM_ID" />
+            </Principal>
+            <Dependent Role="CENNIK">
+              <PropertyRef Name="ADM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REZERWACJA_ADMINISTRACJA">
+          <End Role="ADMINISTRACJA" Type="firmatransportowaModel.ADMINISTRACJA" Multiplicity="0..1" />
+          <End Role="REZERWACJA" Type="firmatransportowaModel.REZERWACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADMINISTRACJA">
+              <PropertyRef Name="ADM_ID" />
+            </Principal>
+            <Dependent Role="REZERWACJA">
+              <PropertyRef Name="ADM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZEJAZD_CENNIK">
+          <End Role="CENNIK" Type="firmatransportowaModel.CENNIK" Multiplicity="0..1" />
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.PRZEJAZD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENNIK">
+              <PropertyRef Name="CEN_ID" />
+            </Principal>
+            <Dependent Role="PRZEJAZD">
+              <PropertyRef Name="CEN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OSOBA_DANE_TELEADRESOWE">
+          <End Role="DANE_TELEADRESOWE" Type="firmatransportowaModel.DANE_TELEADRESOWE" Multiplicity="0..1" />
+          <End Role="OSOBA" Type="firmatransportowaModel.OSOBA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DANE_TELEADRESOWE">
+              <PropertyRef Name="DAN_ID" />
+            </Principal>
+            <Dependent Role="OSOBA">
+              <PropertyRef Name="DAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DODATKOWE_WYPOSAZENIE_POJAZD">
+          <End Role="POJAZD" Type="firmatransportowaModel.POJAZD" Multiplicity="0..1" />
+          <End Role="DODATKOWE_WYPOSAZENIE" Type="firmatransportowaModel.DODATKOWE_WYPOSAZENIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Principal>
+            <Dependent Role="DODATKOWE_WYPOSAZENIE">
+              <PropertyRef Name="POJ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KIEROWCA_OSOBA">
+          <End Role="OSOBA" Type="firmatransportowaModel.OSOBA" Multiplicity="0..1" />
+          <End Role="KIEROWCA" Type="firmatransportowaModel.KIEROWCA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OSOBA">
+              <PropertyRef Name="OSO_ID" />
+            </Principal>
+            <Dependent Role="KIEROWCA">
+              <PropertyRef Name="OSO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZEJAZD_KIEROWCA">
+          <End Role="KIEROWCA" Type="firmatransportowaModel.KIEROWCA" Multiplicity="0..1" />
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.PRZEJAZD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KIEROWCA">
+              <PropertyRef Name="KIE_ID" />
+            </Principal>
+            <Dependent Role="PRZEJAZD">
+              <PropertyRef Name="KIE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KLIENT_NAGRODA">
+          <End Role="NAGRODA" Type="firmatransportowaModel.NAGRODA" Multiplicity="0..1" />
+          <End Role="KLIENT" Type="firmatransportowaModel.KLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAGRODA">
+              <PropertyRef Name="NAG_ID" />
+            </Principal>
+            <Dependent Role="KLIENT">
+              <PropertyRef Name="NAG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KLIENT_OSOBA">
+          <End Role="OSOBA" Type="firmatransportowaModel.OSOBA" Multiplicity="0..1" />
+          <End Role="KLIENT" Type="firmatransportowaModel.KLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OSOBA">
+              <PropertyRef Name="OSO_ID" />
+            </Principal>
+            <Dependent Role="KLIENT">
+              <PropertyRef Name="OSO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REZERWACJA_KLIENT">
+          <End Role="KLIENT" Type="firmatransportowaModel.KLIENT" Multiplicity="0..1" />
+          <End Role="REZERWACJA" Type="firmatransportowaModel.REZERWACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLIENT">
+              <PropertyRef Name="KLI_ID" />
+            </Principal>
+            <Dependent Role="REZERWACJA">
+              <PropertyRef Name="KLI_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZEJAZD_POJAZD">
+          <End Role="POJAZD" Type="firmatransportowaModel.POJAZD" Multiplicity="0..1" />
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.PRZEJAZD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Principal>
+            <Dependent Role="PRZEJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STAN_TECHNICZNY_POJAZD">
+          <End Role="POJAZD" Type="firmatransportowaModel.POJAZD" Multiplicity="0..1" />
+          <End Role="STAN_TECHNICZNY" Type="firmatransportowaModel.STAN_TECHNICZNY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZD">
+              <PropertyRef Name="POJ_ID" />
+            </Principal>
+            <Dependent Role="STAN_TECHNICZNY">
+              <PropertyRef Name="POJ_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REZERWACJA_PRZEJAZD">
+          <End Role="PRZEJAZD" Type="firmatransportowaModel.PRZEJAZD" Multiplicity="0..1" />
+          <End Role="REZERWACJA" Type="firmatransportowaModel.REZERWACJA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRZEJAZD">
+              <PropertyRef Name="PRD_ID" />
+            </Principal>
+            <Dependent Role="REZERWACJA">
+              <PropertyRef Name="PRD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK">
+          <End Role="PRZYSTANEK" Type="firmatransportowaModel.PRZYSTANEK" Multiplicity="0..1" />
+          <End Role="PRZYSTANKI_NA_TRASIE" Type="firmatransportowaModel.PRZYSTANKI_NA_TRASIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRZYSTANEK">
+              <PropertyRef Name="PRK_ID" />
+            </Principal>
+            <Dependent Role="PRZYSTANKI_NA_TRASIE">
+              <PropertyRef Name="PRK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="firmatransportowaModelStoreContainer" CdmEntityContainer="firmatransportowaEntities">
+          <EntitySetMapping Name="ADMINISTRACJA">
+            <EntityTypeMapping TypeName="firmatransportowaModel.ADMINISTRACJA">
+              <MappingFragment StoreEntitySet="ADMINISTRACJA">
+                <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
+                <ScalarProperty Name="OSO_ID" ColumnName="OSO_ID" />
+                <ScalarProperty Name="ADM_WYNAGRODZENIE" ColumnName="ADM_WYNAGRODZENIE" />
+                <ScalarProperty Name="ADM_STANOWISKO" ColumnName="ADM_STANOWISKO" />
+                <ScalarProperty Name="ADM_ZATRUDNIONY" ColumnName="ADM_ZATRUDNIONY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CENNIK">
+            <EntityTypeMapping TypeName="firmatransportowaModel.CENNIK">
+              <MappingFragment StoreEntitySet="CENNIK">
+                <ScalarProperty Name="CEN_ID" ColumnName="CEN_ID" />
+                <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
+                <ScalarProperty Name="CEN_KATO_KRK" ColumnName="CEN_KATO_KRK" />
+                <ScalarProperty Name="CEN_JEDEN_PRZYSTANEK" ColumnName="CEN_JEDEN_PRZYSTANEK" />
+                <ScalarProperty Name="CEN_ULGA_STUDENT" ColumnName="CEN_ULGA_STUDENT" />
+                <ScalarProperty Name="CEN_ULGA_DZIECI" ColumnName="CEN_ULGA_DZIECI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DANE_TELEADRESOWE">
+            <EntityTypeMapping TypeName="firmatransportowaModel.DANE_TELEADRESOWE">
+              <MappingFragment StoreEntitySet="DANE_TELEADRESOWE">
+                <ScalarProperty Name="DAN_ID" ColumnName="DAN_ID" />
+                <ScalarProperty Name="DAN_ULICA_NR_LOKALU" ColumnName="DAN_ULICA_NR_LOKALU" />
+                <ScalarProperty Name="DAN_KOD_POCZTOWY" ColumnName="DAN_KOD_POCZTOWY" />
+                <ScalarProperty Name="DAN_MIASTO" ColumnName="DAN_MIASTO" />
+                <ScalarProperty Name="DAN_TELEFON" ColumnName="DAN_TELEFON" />
+                <ScalarProperty Name="DAN_EMAIL" ColumnName="DAN_EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DODATKOWE_WYPOSAZENIE">
+            <EntityTypeMapping TypeName="firmatransportowaModel.DODATKOWE_WYPOSAZENIE">
+              <MappingFragment StoreEntitySet="DODATKOWE_WYPOSAZENIE">
+                <ScalarProperty Name="DOD_ID" ColumnName="DOD_ID" />
+                <ScalarProperty Name="POJ_ID" ColumnName="POJ_ID" />
+                <ScalarProperty Name="DOD_NAZWA" ColumnName="DOD_NAZWA" />
+                <ScalarProperty Name="DOD_OPIS" ColumnName="DOD_OPIS" />
+                <ScalarProperty Name="DOD_ILOSC" ColumnName="DOD_ILOSC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KIEROWCA">
+            <EntityTypeMapping TypeName="firmatransportowaModel.KIEROWCA">
+              <MappingFragment StoreEntitySet="KIEROWCA">
+                <ScalarProperty Name="KIE_ID" ColumnName="KIE_ID" />
+                <ScalarProperty Name="OSO_ID" ColumnName="OSO_ID" />
+                <ScalarProperty Name="KIE_UPRAWNIENIA" ColumnName="KIE_UPRAWNIENIA" />
+                <ScalarProperty Name="KIE_ZATRUDNIONY" ColumnName="KIE_ZATRUDNIONY" />
+                <ScalarProperty Name="KIE_WYNAGRODZENIE" ColumnName="KIE_WYNAGRODZENIE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KLIENT">
+            <EntityTypeMapping TypeName="firmatransportowaModel.KLIENT">
+              <MappingFragment StoreEntitySet="KLIENT">
+                <ScalarProperty Name="KLI_ID" ColumnName="KLI_ID" />
+                <ScalarProperty Name="NAG_ID" ColumnName="NAG_ID" />
+                <ScalarProperty Name="OSO_ID" ColumnName="OSO_ID" />
+                <ScalarProperty Name="KLI_PUNKTY" ColumnName="KLI_PUNKTY" />
+                <ScalarProperty Name="KLI_REZ_NIEWYKORZYSTANE" ColumnName="KLI_REZ_NIEWYKORZYSTANE" />
+                <ScalarProperty Name="KLI_BLOKADA_REZ" ColumnName="KLI_BLOKADA_REZ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NAGRODA">
+            <EntityTypeMapping TypeName="firmatransportowaModel.NAGRODA">
+              <MappingFragment StoreEntitySet="NAGRODA">
+                <ScalarProperty Name="NAG_ID" ColumnName="NAG_ID" />
+                <ScalarProperty Name="NAG_NAZWA" ColumnName="NAG_NAZWA" />
+                <ScalarProperty Name="NAG_ILOSC_PUNKTOW" ColumnName="NAG_ILOSC_PUNKTOW" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OSOBA">
+            <EntityTypeMapping TypeName="firmatransportowaModel.OSOBA">
+              <MappingFragment StoreEntitySet="OSOBA">
+                <ScalarProperty Name="OSO_ID" ColumnName="OSO_ID" />
+                <ScalarProperty Name="DAN_ID" ColumnName="DAN_ID" />
+                <ScalarProperty Name="OSO_IMIE" ColumnName="OSO_IMIE" />
+                <ScalarProperty Name="OSO_NAZWISKO" ColumnName="OSO_NAZWISKO" />
+                <ScalarProperty Name="OSO_URODZONY" ColumnName="OSO_URODZONY" />
+                <ScalarProperty Name="OSO_LOGIN" ColumnName="OSO_LOGIN" />
+                <ScalarProperty Name="OSO_HASLO" ColumnName="OSO_HASLO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POJAZD">
+            <EntityTypeMapping TypeName="firmatransportowaModel.POJAZD">
+              <MappingFragment StoreEntitySet="POJAZD">
+                <ScalarProperty Name="POJ_ID" ColumnName="POJ_ID" />
+                <ScalarProperty Name="POJ_IL_MIEJSC" ColumnName="POJ_IL_MIEJSC" />
+                <ScalarProperty Name="POJ_MARKA" ColumnName="POJ_MARKA" />
+                <ScalarProperty Name="POJ_ROK_PRODUKCJI" ColumnName="POJ_ROK_PRODUKCJI" />
+                <ScalarProperty Name="POJ_STATUS" ColumnName="POJ_STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRZEJAZD">
+            <EntityTypeMapping TypeName="firmatransportowaModel.PRZEJAZD">
+              <MappingFragment StoreEntitySet="PRZEJAZD">
+                <ScalarProperty Name="PRD_ID" ColumnName="PRD_ID" />
+                <ScalarProperty Name="KIE_ID" ColumnName="KIE_ID" />
+                <ScalarProperty Name="CEN_ID" ColumnName="CEN_ID" />
+                <ScalarProperty Name="POJ_ID" ColumnName="POJ_ID" />
+                <ScalarProperty Name="PRD_DATA" ColumnName="PRD_DATA" />
+                <ScalarProperty Name="PRD_KOSZT" ColumnName="PRD_KOSZT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRZYSTANEK">
+            <EntityTypeMapping TypeName="firmatransportowaModel.PRZYSTANEK">
+              <MappingFragment StoreEntitySet="PRZYSTANEK">
+                <ScalarProperty Name="PRK_ID" ColumnName="PRK_ID" />
+                <ScalarProperty Name="PRK_NAZWA" ColumnName="PRK_NAZWA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRZYSTANKI_NA_TRASIE">
+            <EntityTypeMapping TypeName="firmatransportowaModel.PRZYSTANKI_NA_TRASIE">
+              <MappingFragment StoreEntitySet="PRZYSTANKI_NA_TRASIE">
+                <ScalarProperty Name="PRE_ID" ColumnName="PRE_ID" />
+                <ScalarProperty Name="PRE_ODJAZD" ColumnName="PRE_ODJAZD" />
+                <ScalarProperty Name="PRK_ID" ColumnName="PRK_ID" />    
+                <ScalarProperty Name="PRE_KIERUNEK" ColumnName="PRE_KIERUNEK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REZERWACJA">
+            <EntityTypeMapping TypeName="firmatransportowaModel.REZERWACJA">
+              <MappingFragment StoreEntitySet="REZERWACJA">
+                <ScalarProperty Name="REZ_ID" ColumnName="REZ_ID" />
+                <ScalarProperty Name="PRD_ID" ColumnName="PRD_ID" />
+                <ScalarProperty Name="KLI_ID" ColumnName="KLI_ID" />
+                <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
+                <ScalarProperty Name="REZ_DATA_REZERWACJI" ColumnName="REZ_DATA_REZERWACJI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAN_TECHNICZNY">
+            <EntityTypeMapping TypeName="firmatransportowaModel.STAN_TECHNICZNY">
+              <MappingFragment StoreEntitySet="STAN_TECHNICZNY">
+                <ScalarProperty Name="STA_ID" ColumnName="STA_ID" />
+                <ScalarProperty Name="POJ_ID" ColumnName="POJ_ID" />
+                <ScalarProperty Name="STA_OPIS" ColumnName="STA_OPIS" />
+                <ScalarProperty Name="STA_UAKTUALNIONO" ColumnName="STA_UAKTUALNIONO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

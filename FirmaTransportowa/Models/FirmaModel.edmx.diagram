@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="85ca3e2db70745f782f2f9f082b84332" Name="Diagram1">
+        <EntityTypeShape EntityType="firmatransportowaModel.ADMINISTRACJA" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.CENNIK" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.DANE_TELEADRESOWE" Width="1.5" PointX="1.5" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.DODATKOWE_WYPOSAZENIE" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.KIEROWCA" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.KLIENT" Width="1.5" PointX="9" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.NAGRODA" Width="1.5" PointX="6.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.OSOBA" Width="1.5" PointX="1.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.POJAZD" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.PRZEJAZD" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.PRZYSTANEK" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.PRZYSTANKI_NA_TRASIE" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.REZERWACJA" Width="1.5" PointX="11.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="firmatransportowaModel.STAN_TECHNICZNY" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <AssociationConnector Association="firmatransportowaModel.FK_ADMINISTRACJA_OSOBA" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_CENNIK_ADMINISTRACJA" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_REZERWACJA_ADMINISTRACJA" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_PRZEJAZD_CENNIK" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_OSOBA_DANE_TELEADRESOWE" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_DODATKOWE_WYPOSAZENIE_POJAZD" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_KIEROWCA_OSOBA" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_PRZEJAZD_KIEROWCA" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_KLIENT_NAGRODA" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_KLIENT_OSOBA" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_REZERWACJA_KLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_PRZEJAZD_POJAZD" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_STAN_TECHNICZNY_POJAZD" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_PRZYSTANKI_NA_TRASIE_PRZEJAZD" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_REZERWACJA_PRZEJAZD" ManuallyRouted="false" />
+        <AssociationConnector Association="firmatransportowaModel.FK_PRZYSTANKI_NA_TRASIE_PRZYSTANEK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

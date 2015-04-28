@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "WybranyRozklad";
+}
+
+<h2>Wybierz rozkład</h2>
+
+@using (Html.BeginForm("WybranyRozklad", "Home", FormMethod.Get))
+{
+    @Html.DropDownList("_id",@ViewBag.Przystanki as IEnumerable<SelectListItem>, new { @onchange="CallChangefunc(this.value)"  })
+    <input type="submit" value="Wyświetl" disabled ="disabled" id ="ident"/>
+}
+
+<h2>@ViewBag.Wybrany</h2>
+@if(ViewBag.GodzinyKRK.Count > 0){ 
+    <h4>Kierunek: Kraków</h4>
+    foreach (string g in ViewBag.GodzinyKRK)
+    {
+        <li>@g</li>
+    }
+}
+
+@if(ViewBag.GodzinyKAT.Count > 0){ 
+    <h4>Kierunek: Katowice</h4>
+    foreach (string g in ViewBag.GodzinyKAT)
+    {
+        <li>@g</li>
+    }
+}
+
+<script>
+function CallChangefunc(val)
+{
+    if (val != 0) {
+        document.getElementById("ident").disabled = false;
+        document.getElementById("ident").style.display = "inline"
+    }
+    else {
+        document.getElementById("ident").disabled = true;
+        document.getElementById("ident").style.display = "none"
+    }
+}
+</script>
